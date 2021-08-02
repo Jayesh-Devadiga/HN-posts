@@ -1,4 +1,4 @@
-import { CssBaseline } from "@material-ui/core";
+import { CssBaseline, LinearProgress } from "@material-ui/core";
 import React, { useEffect } from "react";
 import { connect } from "react-redux";
 import { backToHome, fetchPosts, showPostJson } from "../redux/actions";
@@ -27,13 +27,10 @@ const PageContent = (props) => {
   return (
     <div style={{ background: "#ecf0f1", height: "100vh" }}>
       <CssBaseline />
-      <Titlebar showingPostJson={showingPostJson} backToHome={backToHome} title={postJson.title}/>
+      <Titlebar showingPostJson={showingPostJson} backToHome={backToHome} title={postJson.title} />
+      {postsList.length === 0 && <LinearProgress />}
       <div style={{ padding: "20px" }}>
-        {showingPostJson ? (
-          <PostJson postJson={postJson}  />
-        ) : (
-          <PostLists postsList={postsList} showPostJson={showPostJson} />
-        )}
+        {showingPostJson ? <PostJson postJson={postJson} /> : <PostLists postsList={postsList} showPostJson={showPostJson} />}
       </div>
     </div>
   );
