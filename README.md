@@ -6,11 +6,11 @@ A simple react aplication which displays the posts from the [Hacker News wesite]
 
 To set up this application open your terminal and run the following command.
 ```
-npm install && npm run build
+npm install
 npm start
 
 ```
-The above command will install all the necessary packages and also build the appliation.
+The above command will install all the necessary packages and run the appliation.
 
 ## Live Demo
 https://hacker-news-posts.herokuapp.com/
